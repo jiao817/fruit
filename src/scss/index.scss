@@ -11,6 +11,38 @@ body {
     height: 100%;
     @include box_flex;
     @include direction(column);
+    position: relative;
+    .dialog {
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background: rgba(0, 0, 0, .4);
+        position: absolute;
+        display: none;
+        .box {
+            width: 50%;
+            height: pxTorem(120px);
+            background: white;
+            margin-top: pxTorem(100px);
+            margin-left: 20%;
+            display: flex;
+            @include direction(column);
+            align-items: center;
+            >p {
+                margin: pxTorem(10px) 0;
+            }
+            >input {
+                width: 80%;
+                height: pxTorem(20px);
+                border: 1px solid gray;
+                margin: pxTorem(5px) 0;
+            }
+            button {
+                width: pxTorem(50px);
+                height: pxTorem(20px);
+            }
+        }
+    }
     header {
         width: 100%;
         height: pxTorem(45px);
@@ -27,6 +59,7 @@ body {
     section {
         width: 100%;
         flex: 1;
+        overflow: hidden;
         .list {
             width: 100%;
             display: flex;
